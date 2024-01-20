@@ -7,7 +7,7 @@ function Header() {
         <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>  {/* collapseOnSelect enabled means when a user selects an option, it closes the navbar. The expand sets the breakpoint for collapse/not collapsed */}
     
             <Container>
-                <Navbar.Brand href="#"> Proshop </Navbar.Brand>
+                <Navbar.Brand href="#"> MarketBreeze </Navbar.Brand>
 
                 <Navbar.Toggle aria-controls='basic-navbar-nav'></Navbar.Toggle>
                 <Navbar.Collapse id='basic-navbar-nav'>
