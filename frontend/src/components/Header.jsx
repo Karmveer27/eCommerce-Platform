@@ -16,6 +16,7 @@ function Header() {
                         <Nav.Link href='/cart'>
                             <FaShoppingCart /> Cart
                         </Nav.Link>
+                        
                         <Nav.Link href='/login'>
                            <FaUser /> Login
                         </Nav.Link>
