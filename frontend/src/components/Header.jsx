@@ -1,5 +1,6 @@
 import { Navbar, Nav, Container} from 'react-bootstrap'
 import { FaShoppingCart, FaUser} from 'react-icons/fa'
+import { LinkContainer } from 'react-router-bootstrap'
 
 function Header() {
   return (
@@ -7,19 +8,28 @@ function Header() {
         <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>  {/* collapseOnSelect enabled means when a user selects an option, it closes the navbar. The expand sets the breakpoint for collapse/not collapsed */}
     
             <Container>
-                <Navbar.Brand href="#"> MarketBreeze </Navbar.Brand>
+
+                <LinkContainer to="/">
+                    <Navbar.Brand> MarketBreeze </Navbar.Brand>
+                </LinkContainer>
 
                 <Navbar.Toggle aria-controls='basic-navbar-nav'></Navbar.Toggle>
                 <Navbar.Collapse id='basic-navbar-nav'>
                     <Nav className="ms-auto">
 
-                        <Nav.Link href='/cart'>
-                            <FaShoppingCart /> Cart
-                        </Nav.Link>
+                        <LinkContainer to="/cart">
+                            <Nav.Link >
+                                <FaShoppingCart /> Cart
+                            </Nav.Link>
+                        </LinkContainer>
+
+                        <LinkContainer to="/login">
+                            <Nav.Link >
+                                <FaUser /> Login
+                            </Nav.Link>
+                        </LinkContainer>
                         
-                        <Nav.Link href='/login'>
-                           <FaUser /> Login
-                        </Nav.Link>
+                        
                         
                     </Nav>
                 </Navbar.Collapse>
