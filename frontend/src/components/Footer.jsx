@@ -9,7 +9,7 @@ function Footer() {
             
             <Row>
                 <Col className='text-center py-3'>
-                    <p>Proshop &copy; {currentTime}</p>
+                    <p>Market Breeze &copy; {currentTime}</p>
                 </Col>
             </Row>
 
