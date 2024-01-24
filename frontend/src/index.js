@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import HomeScreen from './screens/HomeScreen';
 import TestScreen from './screens/TestScreen';
+import ProductScreen from './screens/ProductScreen';
 
 
 import reportWebVitals from './reportWebVitals';
@@ -15,6 +16,7 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/"  element={<App />}>
         <Route index={true} element={<HomeScreen />} /> 
+        <Route path="/product/:id" element={<ProductScreen />} /> 
         <Route path="/test" element={<TestScreen />} /> 
     </Route>
   )
