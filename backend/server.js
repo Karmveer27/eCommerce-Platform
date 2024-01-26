@@ -10,13 +10,13 @@ app.get('/', (req,res) => {
 
 app.get('/products', (req,res) => {
     res.json(products); // res.send sends a string response insead
-})
+});
 
-app.get('/products/:id',(req,res) => {
+app.get('/product/:id',(req,res) => {
     const id = req.params.id;
     const product = products.find((p) => p._id === id);
     res.json(product);
-})
+});
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`)
