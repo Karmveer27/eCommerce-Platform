@@ -14,7 +14,7 @@ import axios from 'axios';
                 setProduct(data);
             };
             fetchProduct();
-        },[productID]);
+        },[productID ]);
 
         
     
