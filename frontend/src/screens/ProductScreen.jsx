@@ -10,7 +10,7 @@ import axios from 'axios';
         useEffect( () => {
             const fetchProduct = async () => {
                 
-                const { data } = await axios.get(`/api/product/${productID}`);
+                const { data } = await axios.get(`/api/products/${productID}`);
                 setProduct(data);
             };
             fetchProduct();
