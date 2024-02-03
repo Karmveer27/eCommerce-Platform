@@ -1,5 +1,9 @@
 
 export const BASE_URL = process.env.NODE_ENV === 'development' ? '' : '' // Can change this later if production doesnt have a proxy
-export const PRODUCT_URL = '/api/products';
+export const PRODUCTS_URL = '/api/products';
+export const USERS_URL = '/api/users';
+export const ORDERS_URL = '/api/orders';
+export const PAYPAL_URL = '/api/config/paypal';
+
 
 
