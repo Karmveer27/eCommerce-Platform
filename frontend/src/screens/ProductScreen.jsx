@@ -1,20 +1,27 @@
-import React, { useEffect, useState } from 'react'
+// import React, { useEffect, useState } from 'react'
+// import axios from 'axios';
 import { useParams } from 'react-router-dom'
 import Rating from '../components/Rating';
 import { Row, Col , Image, ListGroup, Card, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import axios from 'axios';
+import { useGetProductDetailsQuery } from '../slices/productsApiSplice';
+
+
     function ProductScreen() {
+
         const {id:productID} = useParams();
-        const [product,setProduct] = useState({});
-        useEffect( () => {
-            const fetchProduct = async () => {
+        
+        const { data:product, isLoading, error} = useGetProductDetailsQuery(productID);
+
+        // const [product,setProduct] = useState({});
+        // useEffect( () => {
+        //     const fetchProduct = async () => {
                 
-                const { data } = await axios.get(`/api/products/${productID}`);
-                setProduct(data);
-            };
-            fetchProduct();
-        },[productID ]);
+        //         const { data } = await axios.get(`/api/products/${productID}`);
+        //         setProduct(data);
+        //     };
+        //     fetchProduct();
+        // },[productID ]);
 
         
     
@@ -24,7 +31,12 @@ import axios from 'axios';
 
     return (
         <>
-            <Link to='/' className='btn btn-light my-3'>Go Back</Link>
+            {
+              isLoading ? (<h1>Loading</h1>) :
+              error ? (<h1>{error.error || error?.data?.message}</h1>) :
+
+              <>
+                <Link to='/' className='btn btn-light my-3'>Go Back</Link>
             <Row>
                 {/* Three cols, one for Image, details, availability */}
                 <Col md={5}>
@@ -90,6 +102,10 @@ import axios from 'axios';
                 </Col>
 
             </Row>
+              </>
+            
+            }
+            
 
             
 
