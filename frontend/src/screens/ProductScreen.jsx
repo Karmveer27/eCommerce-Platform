@@ -5,6 +5,8 @@ import Rating from '../components/Rating';
 import { Row, Col , Image, ListGroup, Card, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { useGetProductDetailsQuery } from '../slices/productsApiSplice';
+import Loader from '../components/Loader';
+import Message from '../components/Message';
 
 
     function ProductScreen() {
@@ -32,8 +34,8 @@ import { useGetProductDetailsQuery } from '../slices/productsApiSplice';
     return (
         <>
             {
-              isLoading ? (<h1>Loading</h1>) :
-              error ? (<h1>{error.error || error?.data?.message}</h1>) :
+              isLoading ? (<Loader />) :
+              error ? (<Message variant='danger'>{error.error || error?.data?.message}</Message>) :
 
               <>
                 <Link to='/' className='btn btn-light my-3'>Go Back</Link>
