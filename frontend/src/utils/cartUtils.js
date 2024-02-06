@@ -18,7 +18,7 @@ export function addDecimals(num){
     )
     //Item price without tax
     //Tax Price
-    state.taxTotalPrice = addDecimals(
+    state.taxPrice = addDecimals(
         Number((0.15 * state.itemsAndTaxPrice).toFixed(2))
     )
     
@@ -29,7 +29,7 @@ export function addDecimals(num){
     )
 
     //Total Price
-    state.totalprice = (
+    state.totalPrice = (
         Number(state.itemsAndTaxPrice) + Number(state.shippingPrice)
     ).toFixed(2);
 

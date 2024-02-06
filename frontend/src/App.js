@@ -11,7 +11,7 @@ const App = () => {
       <Header />
       <main className='py-3'>
         <Container>
-          <h1>Welcome to MarketBreeze</h1>
+          
           <Outlet />
         </Container>
       </main>
