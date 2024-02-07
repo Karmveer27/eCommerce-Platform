@@ -19,7 +19,7 @@ import {
 } from "react-bootstrap";
 import Message from "../components/Message.jsx";
 import { FaTrash } from "react-icons/fa";
-import { addToCart } from "../slices/cartSlice.js";
+import { addToCart, RemoveFromCart } from "../slices/cartSlice.js";
 
 function CartScreen() {
   const dispatch = useDispatch();
@@ -34,6 +34,10 @@ function CartScreen() {
   const setQuantity = (product, quantity) => {
     dispatch(addToCart({ ...product, quantity }));
   };
+
+  const removeFromCartHandler = (id) => {
+    dispatch(RemoveFromCart({id}));
+  }
 
   //console.log(cart);
 
@@ -74,7 +78,7 @@ function CartScreen() {
                     </Col>
 
                     <Col md={2}>
-                      <Button type="button" variant="light">
+                      <Button type="button" variant="light" onClick={() => (removeFromCartHandler(item._id))}>
                         <FaTrash />
                       </Button>
                     </Col>
