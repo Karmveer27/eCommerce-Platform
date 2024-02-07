@@ -39,6 +39,10 @@ function CartScreen() {
     dispatch(RemoveFromCart({id}));
   }
 
+  const checkoutHandler = () => {
+    navigate('/login?redirect=/shipping') // If logged in,  there is a query parameter in a key value pair redirct : /shipping
+  }
+
   //console.log(cart);
 
   return (
@@ -106,7 +110,7 @@ function CartScreen() {
                 {cart.totalPrice > 0 && <p>Total Price: ${cart.totalPrice}</p>}
               </ListGroup.Item>
               <ListGroup.Item>
-                    <Button type='button' className='btn-block' disabled={cart.cartItems.length === 0 }>
+                    <Button type='button' className='btn-block' disabled={cart.cartItems.length === 0} onClick={checkoutHandler}>
                         Proceed to Checkout
                     </Button>
               </ListGroup.Item>
